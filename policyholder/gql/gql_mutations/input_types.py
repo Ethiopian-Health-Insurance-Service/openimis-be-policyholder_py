@@ -23,6 +23,8 @@ class PolicyHolderInputType(OpenIMISMutation.Input):
     date_valid_from = graphene.Date(required=False)
     date_valid_to = graphene.Date(required=False)
     json_ext = graphene.types.json.JSONString(required=False)
+    employer_tin = graphene.String(max_length=255, required=False)
+    employer_type = graphene.String(max_length=255, required=False)
 
 
 class PolicyHolderUpdateInputType(OpenIMISMutation.Input):
@@ -43,6 +45,8 @@ class PolicyHolderUpdateInputType(OpenIMISMutation.Input):
     date_valid_from = graphene.Date(required=False)
     date_valid_to = graphene.Date(required=False)
     json_ext = graphene.types.json.JSONString(required=False)
+    employer_tin = graphene.String(max_length=255, required=False)
+    employer_type = graphene.String(max_length=255, required=False)
 
 
 class PolicyHolderInsureeInputType(OpenIMISMutation.Input):
