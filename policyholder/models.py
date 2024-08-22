@@ -33,6 +33,8 @@ class PolicyHolder(core_models.HistoryBusinessModel):
     accountancy_account = models.CharField(db_column='AccountancyAccount', max_length=64, blank=True, null=True)
     bank_account = models.JSONField(db_column="bankAccount", blank=True, null=True)
     payment_reference = models.CharField(db_column='PaymentReference', max_length=128, blank=True, null=True)
+    employer_tin = models.CharField(db_column='EmployerTIN', max_length=128, blank=True, null=True)
+    employer_type = models.CharField(db_column='EmployerType', max_length=128, blank=True, null=True)
 
     objects = PolicyHolderManager()
 
