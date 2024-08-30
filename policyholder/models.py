@@ -35,6 +35,7 @@ class PolicyHolder(core_models.HistoryBusinessModel):
     payment_reference = models.CharField(db_column='PaymentReference', max_length=128, blank=True, null=True)
     employer_tin = models.CharField(db_column='EmployerTIN', max_length=128, blank=True, null=True)
     employer_type = models.CharField(db_column='EmployerType', max_length=128, blank=True, null=True)
+    remarks = models.CharField(db_column='Remarks', max_length=500, blank=True, null=True)
 
     objects = PolicyHolderManager()
 
