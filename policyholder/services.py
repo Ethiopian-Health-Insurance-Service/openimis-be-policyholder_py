@@ -64,6 +64,12 @@ class PolicyHolder(object):
             return [{"message": "Policy holder code %s already exists" % code}]
         return []
 
+    @staticmethod
+    def check_unique_employer_tin_policy_holder(employer_tin):
+        if PolicyHolderModel.objects.filter(employer_tin=employer_tin, is_deleted=False).exists():
+            return [{"message": "Policy holder employer tin %s already exists" % employer_tin}]
+        return []
+
     @check_authentication
     def update(self, policy_holder):
         try:
