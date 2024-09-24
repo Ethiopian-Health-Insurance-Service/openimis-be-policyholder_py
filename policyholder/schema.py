@@ -89,8 +89,7 @@ class Query(graphene.ObjectType):
         if not info.context.user.has_perms(PolicyholderConfig.gql_query_policyholder_perms):
             raise PermissionDenied(_("unauthorized"))
         errors = (
-                PolicyHolderServices.check_unique_code_policy_holder(code=kwargs['policy_holder_code']) or
-                PolicyHolderServices.check_unique_employer_tin_policy_holder(employer_tin=kwargs['policy_holder_tin'])
+                PolicyHolderServices.check_unique_code_policy_holder(code=kwargs['policy_holder_code'])
         )
         return False if errors else True
 
